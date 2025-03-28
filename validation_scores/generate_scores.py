@@ -30,9 +30,9 @@ datasets = {
     }
 }
 
-crops = { "jrc_c-elegans-op50-1": "/nrs/cellmap/data/jrc_c-elegans-op50-1/jrc_c-elegans-op50-1.zarr/recon-1/labels/groundtruth/crop528/",
-         "jrc_c-elegans-bw-1": "/nrs/cellmap/data/jrc_c-elegans-bw-1/jrc_c-elegans-bw-1.zarr/recon-1/labels/groundtruth/crop526/",
-  "jrc_c-elegans-comma-1":"/nrs/cellmap/zubovy/crop_splits/c-elegans/8nm/combined/jrc_c-elegans-comma-1/groundtruth.zarr/crop496/"
+gt_crops = { "jrc_c-elegans-op50-1": "/nrs/cellmap/data/jrc_c-elegans-op50-1/jrc_c-elegans-op50-1.zarr/recon-1/labels/groundtruth/",
+         "jrc_c-elegans-bw-1": "/nrs/cellmap/data/jrc_c-elegans-bw-1/jrc_c-elegans-bw-1.zarr/recon-1/labels/groundtruth/",
+  "jrc_c-elegans-comma-1":"/nrs/cellmap/zubovy/crop_splits/c-elegans/8nm/combined/jrc_c-elegans-comma-1/groundtruth.zarr/"
 #   "jrc_c-elegans-comma-1":"/nrs/cellmap/zubovy/crop_splits/c-elegans/8nm/combined/jrc_c-elegans-comma-1/groundtruth.zarr/crop497/"
 }
 #%%
@@ -60,38 +60,44 @@ def get_scores(pred, label):
 scores = {}
 for dataset, organelles in datasets.items():
     scores[dataset] = {}
-    crop_path = crops[dataset]
-    for org, org_path in organelles.items():
-        print(f"Processing {dataset} {org}")
-        result_ds = ImageDataInterface(
-            os.path.join(org_path,"s0"), normalize=False
-        )
-        for i in range(3):
-            label_crop = ImageDataInterface(
-                os.path.join(crop_path,org,f"s{i}")
+    crops = [f for f in os.listdir(gt_crops[dataset]) if os.path.isdir(os.path.join(gt_crops[dataset], f))]
+    for crop in crops:
+        scores[dataset][crop] = {}
+        crop_path = os.path.join(gt_crops[dataset], crop)
+        for org, org_path in organelles.items():
+            # print(f"Processing {dataset} {org}")
+            result_ds = ImageDataInterface(
+                os.path.join(org_path,"s0"), normalize=False
             )
-            if label_crop.voxel_size == result_ds.voxel_size:
-                label_data = zarr.open(os.path.join(crop_path,org,f"s{i}") )[:]
-                break
-        # print(result_ds.voxel_size)
-        # print(label_crop.voxel_size)
-        # print(label_crop.roi)
-        result_data = result_ds.to_ndarray_ts(label_crop.roi)
-        # label_data = label_crop.to_ndarray_ts()
-        print(result_data.shape)
-        print(label_data.shape)
-        sc = get_scores(result_data, label_data)
-        print(f"score {org}: {sc}")
-        scores[dataset][org] = sc
+            for i in range(3):
+                label_crop = ImageDataInterface(
+                    os.path.join(crop_path,org,f"s{i}")
+                )
+                if label_crop.voxel_size == result_ds.voxel_size:
+                    label_data = zarr.open(os.path.join(crop_path,org,f"s{i}") )[:]
+                    break
+            # print(result_ds.voxel_size)
+            # print(label_crop.voxel_size)
+            # print(label_crop.roi)
+            result_data = result_ds.to_ndarray_ts(label_crop.roi)
+            # label_data = label_crop.to_ndarray_ts()
+            # print(result_data.shape)
+            # print(label_data.shape)
+            sc = get_scores(result_data, label_data)
+            print(f"score {org}: {sc}")
+            scores[dataset][crop][org] = sc
 
         # break
+#%%
 scores
 # %%
 f1_scores = {}
-for dataset, organelles in scores.items():
+for dataset, crops in scores.items():
     f1_scores[dataset] = {}
-    for org, org_scores in organelles.items():
-        f1_scores[dataset][org] = float(org_scores["f1"])
+    for crop, organelles in crops.items():
+        f1_scores[dataset][crop] = {}
+        for org, org_scores in organelles.items():
+            f1_scores[dataset][crop][org] = float(org_scores["f1"])
 # %%
 f1_scores
 # %%
@@ -102,33 +108,37 @@ for dataset, organelles in f1_scores.items():
 # %%
 from funlib.evaluate import rand_voi
 # %%
-import numpy as np
+
 instances_scores = {}
 for dataset, organelles in datasets.items():
     instances_scores[dataset] = {}
-    crop_path = crops[dataset]
-    for org, org_path in organelles.items():
-        print(f"Processing {dataset} {org}")
-        result_ds = ImageDataInterface(
-            os.path.join(org_path,"s0"), normalize=False
-        )
-        for i in range(3):
-            label_crop = ImageDataInterface(
-                os.path.join(crop_path,org,f"s{i}")
+    crops = [f for f in os.listdir(gt_crops[dataset]) if os.path.isdir(os.path.join(gt_crops[dataset], f))]
+    for crop in crops:
+        instances_scores[dataset][crop] = {}
+        crop_path = os.path.join(gt_crops[dataset], crop)
+        for org, org_path in organelles.items():
+            # print(f"Processing {dataset} {org}")
+            result_ds = ImageDataInterface(
+                os.path.join(org_path,"s0"), normalize=False
             )
-            if label_crop.voxel_size == result_ds.voxel_size:
-                label_data = zarr.open(os.path.join(crop_path,org,f"s{i}") )[:].astype(np.uint64)
-                break
-        # print(result_ds.voxel_size)
-        # print(label_crop.voxel_size)
-        # print(label_crop.roi)
-        result_data = result_ds.to_ndarray_ts(label_crop.roi).astype(np.uint64)
-        # label_data = label_crop.to_ndarray_ts()
-        print(result_data.shape)
-        print(label_data.shape)
-        sc = rand_voi(result_data, label_data)
-        print(f"score {org}: {sc}")
-        instances_scores[dataset][org] = sc
+            for i in range(3):
+                label_crop = ImageDataInterface(
+                    os.path.join(crop_path,org,f"s{i}")
+                )
+                if label_crop.voxel_size == result_ds.voxel_size:
+                    label_data = zarr.open(os.path.join(crop_path,org,f"s{i}") )[:].astype(np.uint64)
+                    break
+            # print(result_ds.voxel_size)
+            # print(label_crop.voxel_size)
+            # print(label_crop.roi)
+            result_data = result_ds.to_ndarray_ts(label_crop.roi).astype(np.uint64)
+            # label_data = label_crop.to_ndarray_ts()
+            # print(result_data.shape)
+            # print(label_data.shape)
+            sc = rand_voi(result_data, label_data)
+            print(f"score {org}: {sc}")
+            instances_scores[dataset][crop][org] = sc
+
 # %%
 instances_scores
 # %%
@@ -468,41 +478,46 @@ def score_instance(
     }
 # %%
 # from funlib.evaluate import detection_scores
+
 instances_scores = {}
 for dataset, organelles in datasets.items():
     instances_scores[dataset] = {}
-    crop_path = crops[dataset]
-    for org, org_path in organelles.items():
-        print(f"Processing {dataset} {org}")
-        result_ds = ImageDataInterface(
-            os.path.join(org_path,"s0"), normalize=False
-        )
-        for i in range(3):
-            label_crop = ImageDataInterface(
-                os.path.join(crop_path,org,f"s{i}")
+    crops = [f for f in os.listdir(gt_crops[dataset]) if os.path.isdir(os.path.join(gt_crops[dataset], f))]
+    for crop in crops:
+        instances_scores[dataset][crop] = {}
+        crop_path = os.path.join(gt_crops[dataset], crop)
+        for org, org_path in organelles.items():
+            # print(f"Processing {dataset} {org}")
+            result_ds = ImageDataInterface(
+                os.path.join(org_path,"s0"), normalize=False
             )
-            if label_crop.voxel_size == result_ds.voxel_size:
-                label_data = zarr.open(os.path.join(crop_path,org,f"s{i}") )[:].astype(np.uint64)
-                break
-        # print(result_ds.voxel_size)
-        # print(label_crop.voxel_size)
-        # print(label_crop.roi)
-        result_data = result_ds.to_ndarray_ts(label_crop.roi).astype(np.uint64)
-        # label_data = label_crop.to_ndarray_ts()
-        print(result_data.shape)
-        print(label_data.shape)
-        sc = score_instance(result_data, label_data)
-        print(f"score {org}: {sc}")
-        instances_scores[dataset][org] = sc
+            for i in range(3):
+                label_crop = ImageDataInterface(
+                    os.path.join(crop_path,org,f"s{i}")
+                )
+                if label_crop.voxel_size == result_ds.voxel_size:
+                    label_data = zarr.open(os.path.join(crop_path,org,f"s{i}") )[:].astype(np.uint64)
+                    break
+            # print(result_ds.voxel_size)
+            # print(label_crop.voxel_size)
+            # print(label_crop.roi)
+            result_data = result_ds.to_ndarray_ts(label_crop.roi).astype(np.uint64)
+            # label_data = label_crop.to_ndarray_ts()
+            # print(result_data.shape)
+            # print(label_data.shape)
+            sc = score_instance(result_data, label_data)
+            print(f"score {org}: {sc}")
+            instances_scores[dataset][crop][org] = sc
 instances_scores
 # %%
 # save det_scores to a json file
 import json
-with open("/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/val/det_scores.json", "w") as f:
+with open("/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/validation_scores/all_instances_scores.json", "w") as f:
     json.dump(instances_scores, f)
 # %%
 scores
 # %%
+import json
 # Convert numpy types to native Python types
 def convert_numpy(obj):
     if isinstance(obj, np.integer):
@@ -513,14 +528,16 @@ def convert_numpy(obj):
         return obj.tolist()
     raise TypeError(f"Type {type(obj)} not serializable")
 
-with open("/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/val/sem_scores.json", "w") as f:
+with open("/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/validation_scores/all_crops_semantic_scores.json", "w") as f:
     json.dump(scores, f, default=convert_numpy)
 # %%
 accuracy_scores = {}
-for dataset, organelles in det_scores.items():
+for dataset, organelles in instances_scores.items():
     accuracy_scores[dataset] = {}
-    for org, org_scores in organelles.items():
-        accuracy_scores[dataset][org] = float(org_scores["accuracy"])
+    for crop, organelles in organelles.items():
+        accuracy_scores[dataset][crop] = {}
+        for org, org_scores in organelles.items():
+            accuracy_scores[dataset][crop][org] = float(org_scores["accuracy"])
 # %%
 accuracy_scores
 # %%
