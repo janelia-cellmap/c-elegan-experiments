@@ -1,4 +1,6 @@
 *.err
 *.out
+*.log
 daisy_logs
 model_checkpoint_*
+snapshots
