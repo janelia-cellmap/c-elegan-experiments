@@ -1,0 +1,13 @@
+input: "/nrs/cellmap/data/jrc_c-elegans-comma-1/jrc_c-elegans-comma-1_downscaled.zarr/recon-1/em/fibsem-uint8"
+
+runs:
+  nuc_32:
+    res: 32
+    checkpoint: "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train/fly_run/nuc/run01_32/it_1_checkpoint_26000"
+    classes:
+      - "nuc"
+  nuc_64:
+    res: 64
+    checkpoint: "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train/fly_run/nuc/run02_64/model_checkpoint_4000"
+    classes:
+      - "nuc"

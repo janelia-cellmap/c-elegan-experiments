@@ -1,0 +1,41 @@
+input: "/nrs/cellmap/data/jrc_c-elegans-op50-1/jrc_c-elegans-op50-1.zarr/recon-1/em/fibsem-int16"
+
+runs:
+  # aff_run01_6:
+  #   res: 16
+  #   checkpoint: "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train/fly_run/all/affinities/new/run01_mito/model_checkpoint_28000"
+  #   classes:
+  #     - "mito"
+  #     - "mito"
+  #     - "mito"
+  #     - "mito"
+  #     - "mito"
+  #     - "mito"
+  # aff_run02_8:
+  #   res: 8
+  #   checkpoint: "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train/fly_run/all/affinities/new/run02_mito/model_checkpoint_70000"
+  #   classes:
+  #     - "mito"
+  #     - "mito"
+  #     - "mito"
+  #     - "mito"
+  #     - "mito"
+  #     - "mito"
+  #     - "mito"
+  #     - "mito"
+  #     - "mito"
+  aff_run04_16:
+    res: 16
+    checkpoint: "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train/fly_run/all/affinities/new/run04_mito/model_checkpoint_65000"
+    classes:
+      - "mito"
+      - "mito"
+      - "mito"
+      - "mito"
+      - "mito"
+      - "mito"
+      - "mito"
+      - "mito"
+      - "mito"
+
+      

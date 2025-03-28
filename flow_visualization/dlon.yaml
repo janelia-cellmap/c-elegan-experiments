@@ -1,0 +1,38 @@
+input: "/nrs/cellmap/data/jrc_c-elegans-dlon-1/jrc_celegans-dlon-1.zarr/recon-1/em/fibsem-int16"
+
+runs:
+  n_all_run03:
+    # scale: "s1"
+    res: 16
+    checkpoint: "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train_fly_model/n/run03/continue/model_checkpoint_35000"
+    classes:
+      - "mito"
+      - "ld"
+      - "lyso"
+      - "perox"
+      - "yolk"
+      - "nuc"
+  n_all_run01:
+    # scale: "s0"
+    res: 8
+    checkpoint: "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train_fly_model/n/run01/conitnue/model_checkpoint_50000"
+    classes:
+      - "mito"
+      - "ld"
+      - "lyso"
+      - "perox"
+      - "yolk"
+      - "nuc"
+  fly:
+    # scale: "s0"
+    res: 8
+    checkpoint: "/nrs/saalfeld/heinrichl/fly_organelles/run08/model_checkpoint_438000"
+    classes:
+      - "all_mem"
+      - "organelle"
+      - "mito"
+      - "er"
+      - "nuc"
+      - "pm"
+      - "vs"
+      - "ld"
