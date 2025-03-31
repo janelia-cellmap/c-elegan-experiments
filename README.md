@@ -42,3 +42,28 @@ When the model is selected and the postprocessing steps are decided. i generate 
 
 ## 4- validation_scores
 Graphs of scores for each dataset cross all the organelles / crops. and the scripts used for it.
+
+
+# Input Normalization:
+### jrc_c-elegans-op50-1:
+- Min : 5000
+- Max : 6000
+- raw path : /nrs/cellmap/data/jrc_c-elegans-op50-1/jrc_c-elegans-op50-1.zarr/recon-1/em/fibsem-int16
+### jrc_c-elegans-bw-1:
+- Min : 5000
+- Max : 6000
+- raw path : /nrs/cellmap/data/jrc_c-elegans-bw-1/jrc_c-elegans-bw-1.zarr/recon-1/em/fibsem-int16
+### jrc_c-elegans-comma-1:
+PS : It is imaged at 6nm, I used a downsampled version (8nm, 16 nm, ...).
+- Min : 0
+- Max : 255
+- raw path : /nrs/cellmap/data/jrc_c-elegans-comma-1/jrc_c-elegans-comma-1_downscaled.zarr/recon-1/em/fibsem-uint8
+
+
+# The best models: 
+Overall the the models trained at 16nm resolution performed better than those trained at 8nm.
+For the 3 datasets we selected 
+- for semantic 6 organelles (mito, ld, lyso, perox, yolk, nuc):
+`/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train_fly_model/all/v2/run03/model_checkpoint_48000`
+- for affinities for mitochondria to get instances, we used the following checkpoints:
+`/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train/fly_run/all/affinities/run04_mito/model_checkpoint_75000`

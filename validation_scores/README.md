@@ -55,3 +55,7 @@ Script used is `generate_scores.py`
     nuc: 0.997
     yolk: 0.999
 
+
+
+![F1 Score Boxplot](f1_boxplot.png)
+![F1 Score Boxplot](accuracy_boxplot.png)

@@ -29,10 +29,6 @@ bsub -J [RUN_NAME] -P [BILLING] -n 12 -q gpu_h100 -gpu "num=1" -o output.log -e 
 
 4. **nuc_low_res**: Conducted two test runs at 32nm and 64nm resolutions for nuclei segmentation. These were exploratory runs to evaluate potential improvements in nuclei segmentation but were ultimately not used.
 
-
-
-
-
 # The best models: 
 Overall the the models trained at 16nm resolution performed better than those trained at 8nm.
 For the 3 datasets we selected 
@@ -40,4 +36,3 @@ For the 3 datasets we selected
 `/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train_fly_model/all/v2/run03/model_checkpoint_48000`
 - for affinities for mitochondria to get instances, we used the following checkpoints:
 `/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train/fly_run/all/affinities/run04_mito/model_checkpoint_75000`
-#%%
