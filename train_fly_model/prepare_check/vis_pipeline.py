@@ -7,7 +7,7 @@ from fly_organelles.train import make_data_pipeline, make_affinities_data_pipeli
 labels = ['mito']
 # labels = ['mito', 'ld', 'lyso', 'perox', 'yolk', 'nuc']
 
-yaml_file = "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train/fly_run/datasets_generated.yaml"
+yaml_file = "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train/train_fly_model/yamls/datasets_generated.yaml"
 
 
 voxel_size = (8, 8, 8)

@@ -4,7 +4,7 @@ runs:
   n_all_run03:
     scale: "s1"
     res: 16
-    checkpoint: "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train_fly_model/n/run03/continue/model_checkpoint_35000"
+    checkpoint: "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train_fly_model/all/v2/run03/model_checkpoint_48000"
     classes:
       - "mito"
       - "ld"
@@ -15,7 +15,7 @@ runs:
   n_all_run01:
     scale: "s0"
     res: 8
-    checkpoint: "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train_fly_model/n/run01/conitnue/model_checkpoint_50000"
+    checkpoint: "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train_fly_model/all/v2/run01/conitnue/model_checkpoint_50000"
     classes:
       - "mito"
       - "ld"

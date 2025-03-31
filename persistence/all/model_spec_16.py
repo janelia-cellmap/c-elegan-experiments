@@ -23,7 +23,7 @@ def load_eval_model(num_labels, checkpoint_path):
     model.eval()
     return model
 
-CHECKPOINT_PATH = "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train/fly_run/n/run03/continue/model_checkpoint_35000"
+CHECKPOINT_PATH = "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train/train_fly_model/all/v2/run03/model_checkpoint_48000"
 NUM_OUTPUTS = 6  # 0:all_mem,1:organelle,2:mito,3:er,4:nucleus,5:pm,6:vs,7:ld
 model = load_eval_model(NUM_OUTPUTS, CHECKPOINT_PATH)
 

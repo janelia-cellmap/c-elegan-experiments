@@ -4,17 +4,17 @@ runs:
 # wait more
   # nuc_32:
   #   res: 32
-  #   checkpoint: "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train/fly_run/nuc/run01_32/it_1_checkpoint_26000"
+  #   checkpoint: "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train/train_fly_model/nuc/run01_32/it_1_checkpoint_26000"
   #   classes:
   #     - "nuc"
   # nuc_64:
   #   res: 64
-  #   checkpoint: "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train/fly_run/nuc/run02_64/model_checkpoint_4000"
+  #   checkpoint: "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train/train_fly_model/nuc/run02_64/model_checkpoint_4000"
   #   classes:
   #     - "nuc"
   n_all_run03:
     res: 16
-    checkpoint: "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train_fly_model/n/run03/continue/model_checkpoint_35000"
+    checkpoint: "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train_fly_model/all/v2/run03/model_checkpoint_48000"
     classes:
       - "mito"
       - "ld"
@@ -24,7 +24,7 @@ runs:
       - "nuc"
   all_run02:
     res: 8
-    checkpoint: "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train_fly_model/run01/model_checkpoint_28000"
+    checkpoint: "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train_fly_model/op50_bw/run01/model_checkpoint_28000"
     classes:
       - "mito"
       - "ld"

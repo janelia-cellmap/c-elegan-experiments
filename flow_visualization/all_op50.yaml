@@ -3,17 +3,17 @@ input: "/nrs/cellmap/data/jrc_c-elegans-op50-1/jrc_c-elegans-op50-1.zarr/recon-1
 runs:
   nuc_32:
     res: 32
-    checkpoint: "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train/fly_run/nuc/run01_32/it_1_checkpoint_26000"
+    checkpoint: "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train_fly_model/nuc/run01_32/it_1_checkpoint_26000"
     classes:
       - "nuc"
   nuc_64:
     res: 64
-    checkpoint: "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train/fly_run/nuc/run02_64/model_checkpoint_4000"
+    checkpoint: "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train_fly_model/nuc/run02_64/model_checkpoint_4000"
     classes:
       - "nuc"
   f_run09:
     res: 16
-    checkpoint: "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train/fly_run/run09/model_checkpoint_164000"
+    checkpoint: "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train_fly_model/all/v2/run09/model_checkpoint_164000"
     classes:
       - "mito"
       - "ld"
@@ -23,7 +23,7 @@ runs:
       - "nuc"
   f_run08:
     res: 8
-    checkpoint: "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train/fly_run/run08/model_checkpoint_182000"
+    checkpoint: "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train_fly_model/all/v2/run08/model_checkpoint_182000"
     classes:
       - "mito"
       - "ld"
@@ -33,7 +33,7 @@ runs:
       - "nuc"
   f_run05:
     res: 8
-    checkpoint: "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train/fly_run/run05/model_checkpoint_198000"
+    checkpoint: "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train_fly_model/all/v2/run05/model_checkpoint_198000"
     classes:
       - "mito"
       - "ld"
@@ -43,7 +43,7 @@ runs:
       - "nuc"
   n_all_run03:
     res: 16
-    checkpoint: "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train/fly_run/n/run03/continue/model_checkpoint_35000"
+    checkpoint: "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train_fly_model/all/v2/run03/continue/model_checkpoint_35000"
     classes:
       - "mito"
       - "ld"
@@ -53,7 +53,7 @@ runs:
       - "nuc"
   n_all_run01:
     res: 8
-    checkpoint: "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train/fly_run/n/run01/conitnue/model_checkpoint_50000"
+    checkpoint: "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train_fly_model/all/v2/run01/conitnue/model_checkpoint_50000"
     classes:
       - "mito"
       - "ld"
@@ -63,7 +63,7 @@ runs:
       - "nuc"
   all_run02:
     res: 8
-    checkpoint: "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train/fly_run/all/run01/model_checkpoint_28000"
+    checkpoint: "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train_fly_model/all/run01/model_checkpoint_28000"
     classes:
       - "mito"
       - "ld"

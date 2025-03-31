@@ -1,6 +1,6 @@
 #%%
 data_path = "/nrs/cellmap/data/jrc_c-elegans-op50-1/jrc_c-elegans-op50-1.zarr/recon-1/em/fibsem-int16/s2"
-checkpoint = "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train/fly_run/n/run03/continue/model_checkpoint_35000"
+checkpoint = "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train/train_fly_model/all/v2/run03/model_checkpoint_48000"
 output_path = "/nrs/cellmap/zouinkhim/c-elegan/predictions/v2_jrc_c-elegans-op50-1.zarr/run03_16"
 channels = ['mito', 'ld', 'lyso', 'perox', 'yolk', 'nuc']
 res = (16,16,16)

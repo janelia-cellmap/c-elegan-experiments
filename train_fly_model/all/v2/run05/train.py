@@ -10,9 +10,9 @@ logger = logging.getLogger(__name__)
 
 log_dir = "/nrs/cellmap/zouinkhim/tensorboard/c_run08"
 
-CHECKPOINT_PATH = "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train/fly_run/run08/model_checkpoint_118000"
+CHECKPOINT_PATH = "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train/train_fly_model/op50_bw/run08/model_checkpoint_118000"
 labels = ['mito', 'ld', 'lyso', 'perox', 'yolk', 'nuc']
-yaml_file = "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train/fly_run/datasets_generated_comma1.yaml"
+yaml_file = "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train/train_fly_model/yamls/datasets_generated_comma1.yaml"
 iterations = 1000000
 
 label_weights = [1,1 ,1,1,1,1]

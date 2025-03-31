@@ -10,9 +10,9 @@ logger = logging.getLogger(__name__)
 
 log_dir = "/nrs/cellmap/zouinkhim/tensorboard/nuc_64_run01"
 
-CHECKPOINT_PATH = "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train/fly_run/run09/model_checkpoint_128000"
+CHECKPOINT_PATH = "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train/train_fly_model/op50_bw/run09/model_checkpoint_128000"
 labels = ['nuc']
-yaml_file = "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train/fly_run/datasets_generated_all.yaml"
+yaml_file = "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train/train_fly_model/yamls/datasets_generated_all.yaml"
 iterations = 1000000
 
 label_weights = [1]

@@ -17,7 +17,7 @@ OLD_CHECKPOINT_CHANNELS = ["all_mem", "organelle", "mito", "er", "nuc", "pm", "v
 labels = ['mito', 'ld', 'lyso', 'perox', 'yolk', 'nuc']
 else_map = {"perox":"organelle","yolk":"organelle","lyso":"organelle"}
 
-yaml_file = "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train/fly_run/datasets_generated.yaml"
+yaml_file = "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train/train_fly_model/yamls/datasets_generated.yaml"
 iterations = 1000000
 
 label_weights = [1,1 ,2,3,2,1]
