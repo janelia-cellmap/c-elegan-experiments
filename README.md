@@ -38,7 +38,7 @@ Runs:
 To select the best model i generate a cellmap flow with a variety of models and i give to to annotators to decide if the result is good or not. if not, i train more. and if good, they recommend me which model to select.
 
 ## 3- persistence:
-When the model is selected and the postprocessing steps are decided. i generate a blockwise processor script that will process the whole volume blockwise using multiple cluster jobs. usually the compting (inference+postprocessing) takes less than 30 min
+Once the model is selected and the postprocessing steps are decided. i generate a blockwise processor script that will process the whole volume blockwise using multiple cluster jobs. usually the compting (inference+postprocessing) takes less than 30 min
 
 ## 4- validation_scores
 Graphs of scores for each dataset cross all the organelles / crops. and the scripts used for it.
