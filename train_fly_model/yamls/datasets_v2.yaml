@@ -1,0 +1,21 @@
+datasets:
+  jrc_c-elegans-op50-1:
+    raw_path: /nrs/cellmap/data/jrc_c-elegans-op50-1/jrc_c-elegans-op50-1.zarr/recon-1/em/fibsem-int16
+    raw_min: 5000
+    raw_max: 6000
+    gt_pattern: /nrs/cellmap/data/jrc_c-elegans-op50-1/jrc_c-elegans-op50-1.zarr/recon-1/labels/groundtruth/[CROP]/
+  jrc_c-elegans-bw-1:
+    raw_path: /nrs/cellmap/data/jrc_c-elegans-bw-1/jrc_c-elegans-bw-1.zarr/recon-1/em/fibsem-int16
+    raw_min: 5000
+    raw_max: 6000
+    gt_pattern: /nrs/cellmap/data/jrc_c-elegans-bw-1/jrc_c-elegans-bw-1.zarr/recon-1/labels/groundtruth/[CROP]/
+  jrc_c-elegans-comma-1:
+    raw_path: /nrs/cellmap/data/jrc_c-elegans-comma-1/jrc_c-elegans-comma-1_downscaled.zarr/recon-1/em/fibsem-uint8
+    raw_min: 0
+    raw_max: 250
+    gt_pattern: /nrs/cellmap/zubovy/crop_splits/c-elegans/8nm/combined/jrc_c-elegans-comma-1/groundtruth.zarr/[CROP]/
+  jrc_c-elegans-dlon-1:
+    raw_path: /nrs/cellmap/data/jrc_c-elegans-dlon-1/jrc_c-elegans-dlon-1.zarr/recon-1/em/fibsem-int16
+    raw_min: 2700
+    raw_max: 3500
+    gt_pattern: /nrs/cellmap/data/jrc_c-elegans-dlon-1/jrc_c-elegans-dlon-1.zarr/recon-1/labels/groundtruth/[CROP]/

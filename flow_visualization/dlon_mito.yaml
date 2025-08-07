@@ -1,0 +1,33 @@
+input: "/nrs/cellmap/data/jrc_c-elegans-dlon-1/jrc_c-elegans-dlon-1.zarr/recon-1/em/fibsem-int16"
+
+runs:
+  new_all_run03:
+    # scale: "s1"
+    res: 16
+    checkpoint: "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train_fly_model/all/v2/run03/continue/model_checkpoint_85000"
+    classes:
+      - "mito"
+      - "ld"
+      - "lyso"
+      - "perox"
+      - "yolk"
+      - "nuc"
+  dist:
+    # scale: "s0"
+    res: 16
+    checkpoint: "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train_fly_model/op50_bw_comma_dlon/distances/dist_c_elegan_4_datasets_16nm_run_1/model_checkpoint_12000"
+    classes:
+      - "mito"
+  affi:
+    res: 16
+    checkpoint: "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train_fly_model/op50_bw_comma_dlon/affinities_mito/aff_c_elegan_4_datasets_16nm_run_1/model_checkpoint_118000"
+    classes:
+      - "mito"
+      - "mito"
+      - "mito"
+      - "mito"
+      - "mito"
+      - "mito"
+      - "mito"
+      - "mito"
+      - "mito"

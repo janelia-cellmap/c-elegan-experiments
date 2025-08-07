@@ -1,17 +1,19 @@
 #%%
 import yaml
-import numpy as np
-import gunpowder as gp
 import time
-from fly_organelles.train import make_data_pipeline, make_affinities_data_pipeline
-
+import numpy as np
+import matplotlib.pyplot as plt
+import gunpowder as gp
+from fly_organelles.train import make_distance_data_pipeline
+#%%
 labels = ['mito']
 # labels = ['mito', 'ld', 'lyso', 'perox', 'yolk', 'nuc']
 
-yaml_file = "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train/train_fly_model/yamls/datasets_generated.yaml"
+yaml_file = "/groups/cellmap/cellmap/zouinkhim/c-elegen/v2/train_fly_model/yamls/datasets_generated_4_datasets.yaml"
 
 
-voxel_size = (8, 8, 8)
+
+voxel_size = (16, 16, 16)
 
 with open(yaml_file, "r") as data_yaml:
     datasets = yaml.safe_load(data_yaml)
@@ -27,23 +29,14 @@ max_out_request = (
 )
 pad_width_out = output_size / 2.0
 
-pipeline = make_affinities_data_pipeline(
+pipeline = make_distance_data_pipeline(
     labels,
     datasets,
     pad_width_out,
     voxel_size,
     max_out_request,
     displacement_sigma,
-    1,
-    affinities_map = [
-                        [1, 0, 0],
-                        [0, 1, 0],
-                        [0, 0, 1],
-                        [6, 0, 0],
-                        [0, 6, 0],
-                        [0, 0, 6],
-    ],
-    lsd = True,
+    1
 )
 #%%
 def generate_batches(pipeline, input_size, output_size, voxel_size):
@@ -65,26 +58,25 @@ print(f"Time taken to generate batch: {end_time - start_time} seconds")
 raw = batch[gp.ArrayKey("RAW")].data
 print(f"raw shape: {raw.shape} min: {raw.min()} max: {raw.max()}")
 gt = batch[gp.ArrayKey("LABELS")].data
-print(f"gt shape: {gt.shape} min: {gt.min()} max: {gt.max()} unique: {np.unique(gt, return_index=True)}")
-#%%
+print(f"gt shape: {gt.shape} min: {gt.min()} max: {gt.max()}")
 
-CH= 1
 
-import matplotlib.pyplot as plt
 
 raw_example = raw[0, 0, :, :,89]
-gt_example = gt[0, CH*3:CH*3+3, :, :,28]
+gt_example = gt[0, 0, :, :,28]
 print(gt_example.shape)
 
 # Pad gt_example to fit raw_example, centered
-full_gt_example = np.zeros((*raw_example.shape,3))
+full_gt_example = np.zeros(raw_example.shape)
 print(full_gt_example.shape)
 
-for i in range(3):
-    full_gt_example[raw_example.shape[0]//2-gt_example.shape[1]//2:raw_example.shape[0]//2+gt_example.shape[1]//2,
-                    raw_example.shape[1]//2-gt_example.shape[2]//2:raw_example.shape[1]//2+gt_example.shape[2]//2,i] = gt_example[i]
 
+full_gt_example[raw_example.shape[0]//2-gt_example.shape[0]//2:raw_example.shape[0]//2+gt_example.shape[0]//2,
+                raw_example.shape[1]//2-gt_example.shape[1]//2:raw_example.shape[1]//2+gt_example.shape[1]//2] = gt_example[:]
+#%%
 plt.imshow(raw_example, cmap="gray")
-plt.imshow(full_gt_example, alpha=0.5)
+plt.imshow(full_gt_example, cmap = "gray",alpha=0.5)
 plt.show()
+# %%
+gt_example.shape
 # %%

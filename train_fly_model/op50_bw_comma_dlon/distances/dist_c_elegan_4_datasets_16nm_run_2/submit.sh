@@ -1,0 +1,1 @@
+bsub -J dist_c_elegan_4_datasets_16nm_run_2 -P cellmap -n 12 -q gpu_h100 -gpu "num=1" -o output.log -e error.log python train.py
