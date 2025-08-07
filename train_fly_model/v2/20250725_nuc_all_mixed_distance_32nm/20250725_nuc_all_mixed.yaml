@@ -1,0 +1,143 @@
+datasets:
+  jrc_c-elegans-op50-1:
+    contrast:
+    - 5000
+    - 6000
+    raw: /nrs/cellmap/data/jrc_c-elegans-op50-1/jrc_c-elegans-op50-1.zarr/recon-1/em/fibsem-int16
+    crops:
+      crop528: /nrs/cellmap/data/jrc_c-elegans-op50-1/jrc_c-elegans-op50-1.zarr/recon-1/labels/groundtruth/crop528/
+      crop533: /nrs/cellmap/data/jrc_c-elegans-op50-1/jrc_c-elegans-op50-1.zarr/recon-1/labels/groundtruth/crop533/
+      crop535: /nrs/cellmap/data/jrc_c-elegans-op50-1/jrc_c-elegans-op50-1.zarr/recon-1/labels/groundtruth/crop535/
+      crop543: /nrs/cellmap/data/jrc_c-elegans-op50-1/jrc_c-elegans-op50-1.zarr/recon-1/labels/groundtruth/crop543/
+  jrc_c-elegans-bw-1:
+    contrast:
+    - 5000
+    - 6000
+    raw: /nrs/cellmap/data/jrc_c-elegans-bw-1/jrc_c-elegans-bw-1.zarr/recon-1/em/fibsem-int16
+    crops:
+      crop526: /nrs/cellmap/data/jrc_c-elegans-bw-1/jrc_c-elegans-bw-1.zarr/recon-1/labels/groundtruth/crop526/
+      crop540: /nrs/cellmap/data/jrc_c-elegans-bw-1/jrc_c-elegans-bw-1.zarr/recon-1/labels/groundtruth/crop540/
+      crop541: /nrs/cellmap/data/jrc_c-elegans-bw-1/jrc_c-elegans-bw-1.zarr/recon-1/labels/groundtruth/crop541/
+  jrc_c-elegans-comma-1:
+    contrast:
+    - 0
+    - 250
+    raw: /nrs/cellmap/data/jrc_c-elegans-comma-1/jrc_c-elegans-comma-1_downscaled.zarr/recon-1/em/fibsem-uint8
+    crops:
+      crop496: /nrs/cellmap/zubovy/crop_splits/c-elegans/8nm/rescaled/groundtruth.zarr/crop496/
+      crop497: /nrs/cellmap/zubovy/crop_splits/c-elegans/8nm/rescaled/groundtruth.zarr/crop497/
+      crop498: /nrs/cellmap/zubovy/crop_splits/c-elegans/8nm/rescaled/groundtruth.zarr/crop498/
+      crop513: /nrs/cellmap/zubovy/crop_splits/c-elegans/8nm/rescaled/groundtruth.zarr/crop513/
+      crop514: /nrs/cellmap/zubovy/crop_splits/c-elegans/8nm/rescaled/groundtruth.zarr/crop514/
+      crop515: /nrs/cellmap/zubovy/crop_splits/c-elegans/8nm/rescaled/groundtruth.zarr/crop515/
+      crop516: /nrs/cellmap/zubovy/crop_splits/c-elegans/8nm/rescaled/groundtruth.zarr/crop516/
+      crop534: /nrs/cellmap/zubovy/crop_splits/c-elegans/8nm/rescaled/groundtruth.zarr/crop534/
+      crop545: /nrs/cellmap/zubovy/crop_splits/c-elegans/8nm/rescaled/groundtruth.zarr/crop545/
+      crop553: /nrs/cellmap/zubovy/crop_splits/c-elegans/8nm/rescaled/groundtruth.zarr/crop553/
+      crop554: /nrs/cellmap/zubovy/crop_splits/c-elegans/8nm/rescaled/groundtruth.zarr/crop554/
+      crop555: /nrs/cellmap/zubovy/crop_splits/c-elegans/8nm/rescaled/groundtruth.zarr/crop555/
+  jrc_celegans_bw25113:
+    contrast:
+    - 30000
+    - 40000
+    raw: /nrs/cellmap/data/jrc_celegans_bw25113/jrc_celegans_bw25113.zarr/recon-1/em/fibsem-uint16
+    crops:
+      crop1083: /nrs/cellmap/data/jrc_celegans_bw25113/jrc_celegans_bw25113.zarr/recon-1/labels/groundtruth/crop1083/
+      crop1085: /nrs/cellmap/data/jrc_celegans_bw25113/jrc_celegans_bw25113.zarr/recon-1/labels/groundtruth/crop1085/
+  jrc_mus-salivary-1:
+    contrast:
+    - 0
+    - 250
+    raw: /nrs/cellmap/data/jrc_mus-salivary-1/jrc_mus-salivary-1.zarr/recon-1/em/fibsem-uint8
+    crops:
+      crop1000: /nrs/cellmap/data/jrc_mus-salivary-1/jrc_mus-salivary-1.zarr/recon-1/labels/groundtruth/crop1000/
+      crop1001: /nrs/cellmap/data/jrc_mus-salivary-1/jrc_mus-salivary-1.zarr/recon-1/labels/groundtruth/crop1001/
+      crop1002: /nrs/cellmap/data/jrc_mus-salivary-1/jrc_mus-salivary-1.zarr/recon-1/labels/groundtruth/crop1002/
+      crop1003: /nrs/cellmap/data/jrc_mus-salivary-1/jrc_mus-salivary-1.zarr/recon-1/labels/groundtruth/crop1003/
+      crop1068: /nrs/cellmap/data/jrc_mus-salivary-1/jrc_mus-salivary-1.zarr/recon-1/labels/groundtruth/crop1068/
+      crop552: /nrs/cellmap/data/jrc_mus-salivary-1/jrc_mus-salivary-1.zarr/recon-1/labels/groundtruth/crop552/
+      crop999: /nrs/cellmap/data/jrc_mus-salivary-1/jrc_mus-salivary-1.zarr/recon-1/labels/groundtruth/crop999/
+  jrc_mus-salivary-2:
+    contrast:
+    - 0
+    - 250
+    raw: /nrs/cellmap/data/jrc_mus-salivary-2/jrc_mus-salivary-2.zarr/recon-1/em/fibsem-uint8
+    crops:
+      crop1004: /nrs/cellmap/data/jrc_mus-salivary-2/jrc_mus-salivary-2.zarr/recon-1/labels/groundtruth/crop1004/
+      crop1005: /nrs/cellmap/data/jrc_mus-salivary-2/jrc_mus-salivary-2.zarr/recon-1/labels/groundtruth/crop1005/
+      crop1006: /nrs/cellmap/data/jrc_mus-salivary-2/jrc_mus-salivary-2.zarr/recon-1/labels/groundtruth/crop1006/
+      crop1007: /nrs/cellmap/data/jrc_mus-salivary-2/jrc_mus-salivary-2.zarr/recon-1/labels/groundtruth/crop1007/
+      crop1069: /nrs/cellmap/data/jrc_mus-salivary-2/jrc_mus-salivary-2.zarr/recon-1/labels/groundtruth/crop1069/
+  jrc_mus-salivary-3:
+    contrast:
+    - 0
+    - 250
+    raw: /nrs/cellmap/data/jrc_mus-salivary-3/jrc_mus-salivary-3.zarr/recon-1/em/fibsem-uint8
+    crops:
+      crop1008: /nrs/cellmap/data/jrc_mus-salivary-3/jrc_mus-salivary-3.zarr/recon-1/labels/groundtruth/crop1008/
+      crop1009: /nrs/cellmap/data/jrc_mus-salivary-3/jrc_mus-salivary-3.zarr/recon-1/labels/groundtruth/crop1009/
+      crop1010: /nrs/cellmap/data/jrc_mus-salivary-3/jrc_mus-salivary-3.zarr/recon-1/labels/groundtruth/crop1010/
+      crop1011: /nrs/cellmap/data/jrc_mus-salivary-3/jrc_mus-salivary-3.zarr/recon-1/labels/groundtruth/crop1011/
+      crop1012: /nrs/cellmap/data/jrc_mus-salivary-3/jrc_mus-salivary-3.zarr/recon-1/labels/groundtruth/crop1012/
+      crop1070: /nrs/cellmap/data/jrc_mus-salivary-3/jrc_mus-salivary-3.zarr/recon-1/labels/groundtruth/crop1070/
+  jrc_mus-pancreas-4:
+    contrast:
+    - 0
+    - 250
+    raw: /nrs/cellmap/data/jrc_mus-pancreas-4/jrc_mus-pancreas-4.zarr/recon-1/em/fibsem-uint8
+    crops:
+      crop1013: /nrs/cellmap/data/jrc_mus-pancreas-4/jrc_mus-pancreas-4.zarr/recon-1/labels/groundtruth/crop1013/
+      crop1060: /nrs/cellmap/data/jrc_mus-pancreas-4/jrc_mus-pancreas-4.zarr/recon-1/labels/groundtruth/crop1060/
+  jrc_mus-pancreas-5:
+    contrast:
+    - 32000
+    - 40000
+    raw: /nrs/cellmap/data/jrc_mus-pancreas-5/jrc_mus-pancreas-5.zarr/recon-1/em/fibsem-uint16
+    crops:
+      crop1014: /nrs/cellmap/data/jrc_mus-pancreas-5/jrc_mus-pancreas-5.zarr/recon-1/labels/groundtruth/crop1014/
+  jrc_mus-pancreas-6:
+    contrast:
+    - 0
+    - 250
+    raw: /nrs/cellmap/data/jrc_mus-pancreas-6/jrc_mus-pancreas-6.zarr/recon-1/em/fibsem-uint8
+    crops:
+      crop1015: /nrs/cellmap/data/jrc_mus-pancreas-6/jrc_mus-pancreas-6.zarr/recon-1/labels/groundtruth/crop1015/
+      crop1016: /nrs/cellmap/data/jrc_mus-pancreas-6/jrc_mus-pancreas-6.zarr/recon-1/labels/groundtruth/crop1016/
+      crop1058: /nrs/cellmap/data/jrc_mus-pancreas-6/jrc_mus-pancreas-6.zarr/recon-1/labels/groundtruth/crop1058/
+      crop1059: /nrs/cellmap/data/jrc_mus-pancreas-6/jrc_mus-pancreas-6.zarr/recon-1/labels/groundtruth/crop1059/
+      crop990: /nrs/cellmap/data/jrc_mus-pancreas-6/jrc_mus-pancreas-6.zarr/recon-1/labels/groundtruth/crop990/
+  jrc_mus-pancreas-7:
+    contrast:
+    - 0
+    - 250
+    raw: /nrs/cellmap/data/jrc_mus-pancreas-7/jrc_mus-pancreas-7.zarr/recon-1/em/fibsem-uint8
+    crops:
+      crop1061: /nrs/cellmap/data/jrc_mus-pancreas-7/jrc_mus-pancreas-7.zarr/recon-1/labels/groundtruth/crop1061/
+      crop1062: /nrs/cellmap/data/jrc_mus-pancreas-7/jrc_mus-pancreas-7.zarr/recon-1/labels/groundtruth/crop1062/
+  jrc_mus-cerebellum-3:
+    contrast:
+    - 0
+    - 250
+    raw: /nrs/cellmap/data/jrc_mus-cerebellum-3/jrc_mus-cerebellum-3.zarr/recon-1/em/fibsem-uint8
+    crops:
+      crop1055: /nrs/cellmap/data/jrc_mus-cerebellum-3/jrc_mus-cerebellum-3.zarr/recon-1/labels/groundtruth/crop1055/
+      crop1056: /nrs/cellmap/data/jrc_mus-cerebellum-3/jrc_mus-cerebellum-3.zarr/recon-1/labels/groundtruth/crop1056/
+      crop1057: /nrs/cellmap/data/jrc_mus-cerebellum-3/jrc_mus-cerebellum-3.zarr/recon-1/labels/groundtruth/crop1057/
+  jrc_mus-cerebellum-2:
+    contrast:
+    - 32000
+    - 40000
+    raw: /nrs/cellmap/data/jrc_mus-cerebellum-2/jrc_mus-cerebellum-2.zarr/recon-1/em/fibsem-uint16
+    crops:
+      crop1025: /nrs/cellmap/data/jrc_mus-cerebellum-2/jrc_mus-cerebellum-2.zarr/recon-1/labels/groundtruth/crop1025/
+      crop1053: /nrs/cellmap/data/jrc_mus-cerebellum-2/jrc_mus-cerebellum-2.zarr/recon-1/labels/groundtruth/crop1053/
+      crop1054: /nrs/cellmap/data/jrc_mus-cerebellum-2/jrc_mus-cerebellum-2.zarr/recon-1/labels/groundtruth/crop1054/
+  jrc_mus-cerebellum-1:
+    contrast:
+    - 0
+    - 250
+    raw: /nrs/cellmap/data/jrc_mus-cerebellum-1/jrc_mus-cerebellum-1.zarr/recon-1/em/fibsem-uint8
+    crops:
+      crop994: /nrs/cellmap/data/jrc_mus-cerebellum-1/jrc_mus-cerebellum-1.zarr/recon-1/labels/groundtruth/crop994/
+      crop995: /nrs/cellmap/data/jrc_mus-cerebellum-1/jrc_mus-cerebellum-1.zarr/recon-1/labels/groundtruth/crop995/
+      crop998: /nrs/cellmap/data/jrc_mus-cerebellum-1/jrc_mus-cerebellum-1.zarr/recon-1/labels/groundtruth/crop998/

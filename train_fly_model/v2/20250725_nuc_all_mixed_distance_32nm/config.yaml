@@ -1,6 +1,6 @@
 labels:
 - nuc
 paths:
-  log_dir: /nrs/cellmap/zouinkhim/tensorboard/20250725_nuc_all_mixed_distance_32nm
-  yaml_file: /groups/cellmap/cellmap/zouinkhim/c-elegen/v3/yamls/generated/20250725_nuc_all_mixed.yaml
+  log_dir: tensorboard/20250725_nuc_all_mixed_distance_32nm
+  yaml_file: 20250725_nuc_all_mixed.yaml
 voxel_size: 32
